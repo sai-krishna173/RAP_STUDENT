@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service def of Stud'
+define service ZSD_STUD_0173 {
+  expose ZC_STUD_0173;
+}

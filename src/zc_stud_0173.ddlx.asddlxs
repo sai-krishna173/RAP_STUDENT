@@ -1,0 +1,52 @@
+@Metadata.layer: #CUSTOMER
+
+annotate entity  ZC_STUD_0173
+    with 
+{  @UI.facet: [{ id: 'Student',
+  purpose: #STANDARD,
+  type: #IDENTIFICATION_REFERENCE,
+  label: 'Student Data Entry',
+  position: 10 }]
+  @UI:{ lineItem: [{ position: 10, label: 'Student ID' }],
+  identification: [{ position: 10 , label: 'Student ID'}],
+  selectionField: [{ position: 10 }] }
+  Id;
+   @UI:{ lineItem: [{ position: 20, label: 'First Name' }],
+  identification: [{ position: 20 , label: 'First Name'}],
+  selectionField: [{ position: 20 }] }
+  Fname;
+    @UI:{ lineItem: [{ position: 30, label: 'Last Name' }],
+  identification: [{ position: 30 , label: 'Last Name'}],
+  selectionField: [{ position: 30 }] }
+  Lname;
+  @UI:{ lineItem: [{ position: 40, label: 'Age' }],
+  identification: [{ position: 40 , label: 'age'}],
+  selectionField: [{ position: 40 }] }
+  Age;
+  @UI: { lineItem: [{ position: 50 , label: 'Course' }],
+  identification: [{ position : 50, label: 'Course' }],
+  selectionField: [{ position : 50 }] }
+  Course;
+  @UI: { lineItem: [{ position: 60, label: 'Course Duration' }],
+  identification: [{ position: 60, label: 'Course Duration' }],
+  selectionField: [{ position: 60 }] }
+  Courseduration;
+  @UI: { lineItem: [{ position: 70, label: 'Admitted' }, 
+  { type: #FOR_ACTION, dataAction: 'getAdmitted', label: 'Get Admitted' } ],
+  identification: [{ position: 70, label: 'Admitted' }],
+  selectionField: [{ position : 70}] }
+  Status;
+  @UI:{ lineItem: [{ position: 80, label: 'Gender' }],
+  identification: [{ position: 80 , label: 'Gender'}],
+  selectionField: [{ position: 80 }] }
+  Gender;
+  @UI:{ lineItem: [{ position: 90, label: 'DOB' }],
+  identification: [{ position: 90 , label: 'DOB'}],
+  selectionField: [{ position: 90 }] }
+  Dob;
+  @UI.hidden: true
+  Lastchangedat;
+  @UI.hidden: true
+  Locallastchangedat;
+    
+}
