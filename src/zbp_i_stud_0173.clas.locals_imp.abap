@@ -11,6 +11,8 @@ CLASS lhc_Student DEFINITION INHERITING FROM cl_abap_behavior_handler.
 
     METHODS getAdmitted FOR MODIFY
       IMPORTING keys FOR ACTION Student~getAdmitted RESULT result.
+*    METHODS checkCourse FOR VALIDATE ON SAVE
+*      IMPORTING keys FOR Student~checkCourse.
 
 ENDCLASS.
 
@@ -61,5 +63,17 @@ CLASS lhc_Student IMPLEMENTATION.
   ENDMETHOD.
 
 
+
+*  METHOD checkCourse.
+*    read ENTITIES OF zi_stud_0173 in LOCAL MODE
+*    entity Student
+*    fIELDS ( Course ) with corrESPONDING #( keys )
+*    resulT data(lt_course).
+*
+**    result = value #(
+***    for courseRec in lt_course
+***    LET courseval = COND #( WHEN courserec-Course not )
+**     ).
+*  ENDMETHOD.
 
 ENDCLASS.

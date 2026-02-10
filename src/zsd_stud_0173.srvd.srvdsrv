@@ -1,4 +1,6 @@
 @EndUserText.label: 'Service def of Stud'
 define service ZSD_STUD_0173 {
-  expose ZC_STUD_0173;
+  expose ZC_STUD_0173    as Student;
+  expose ZC_academic_173 as AcadamicResults;
+  expose ZI_GENDER_173   as GenderVH;
 }

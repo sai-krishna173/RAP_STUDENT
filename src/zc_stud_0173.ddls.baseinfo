@@ -6,9 +6,15 @@
 "ZI_STUD_0173"
 ],
 "ASSOCIATED":
-[],
+[
+"ZC_ACADEMIC_173",
+"ZI_ACADEMIC_173",
+"ZI_GENDER_173"
+],
 "BASE":
-[],
+[
+"ZI_STUD_0173"
+],
 "ANNO_REF":
 [],
 "SCALAR_FUNCTION":

@@ -20,10 +20,14 @@ define root view entity  ZC_STUD_0173 provider contract transactional_query as p
     Status,
     @EndUserText.label: 'Gender'
     Gender,
+    @EndUserText.label: 'Gender Code'
+    genderText,
     @EndUserText.label: 'DOB'
     Dob,
     @EndUserText.label: 'Last Changed At'
     Lastchangedat,
     @EndUserText.label: 'Local Last Changed At'
-    Locallastchangedat
+    Locallastchangedat,
+    _academics : redirected to composition child ZC_academic_173,
+    _gender
 }

@@ -1,8 +1,8 @@
-projection;
+projection implementation in class zbp_c_stud_0173 unique;
 strict ( 2 );
 use draft;
 
-define behavior for ZC_STUD_0173 //alias <alias_name>
+define behavior for ZC_STUD_0173 alias Student
 {
   use create;
   use update;
@@ -15,4 +15,14 @@ define behavior for ZC_STUD_0173 //alias <alias_name>
   use action Prepare;
   use action getAdmitted;
 
+  use association _academics { create; with draft;}
+}
+
+
+  define behavior for ZC_Academic_173 alias Academic
+  {
+  use update ;
+  use delete;
+
+  use association _student { with draft; }
 }

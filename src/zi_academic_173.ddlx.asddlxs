@@ -1,0 +1,40 @@
+@Metadata.layer: #PARTNER
+
+@UI:{ headerInfo:{ typeName: 'Academic Result Detail',
+                   typeNamePlural: 'Academic Result Details',
+                   title: { type: #STANDARD, label: 'Academic Result Details', value: 'Id' },
+                            description:{ type: #STANDARD, label: 'Academic Result Details'} },
+      presentationVariant: [{ sortOrder: [{by: 'Semester', direction: #ASC }] }] 
+    }
+ @Search.searchable: true
+annotate view ZC_academic_173
+    with 
+{   @UI.facet: [{ id: 'Academic',
+                  purpose: #STANDARD,
+                  type: #IDENTIFICATION_REFERENCE,
+                  label: 'Academic Result Details',
+                  position: 1 }]
+    @UI:{identification: [{ position: 1, label: 'StudentID' }] }
+    @UI.hidden: true
+    Id;
+    @UI:{ lineItem: [{ position: 1 , label: 'Course', importance: #HIGH }],
+    identification: [{ position:2, label: 'Course' }] }
+    @Search.defaultSearchElement: true
+    Course;
+    @UI:{ lineItem: [{ position: 2, label:'Semester', importance: #HIGH }],
+          identification:[ { position:3, label: 'Semester' }] }
+    Semester;
+    @UI:{lineItem: [{ position: 3 , label: 'Course Description', importance: #HIGH }],
+         identification: [ { position: 4, label: 'Course Desription' } ] }
+    Course_desc;
+        @UI:{lineItem: [{ position: 4 , label: 'Sem Description', importance: #HIGH }],
+         identification: [ { position: 5, label: 'Sem Desription' } ] }
+    Semester_desc;
+        @UI:{lineItem: [{ position: 5 , label: 'Semester Result', importance: #HIGH }],
+         identification: [ { position: 6, label: 'Semester Result' } ] }
+    Semresult;
+    @UI:{lineItem: [{ position: 6 , label: 'Result Description', importance: #HIGH }],
+         identification: [ { position: 7, label: 'Result Desription' } ] }
+    Result_desc;
+    
+}

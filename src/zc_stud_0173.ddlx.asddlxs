@@ -6,7 +6,18 @@ annotate entity  ZC_STUD_0173
   purpose: #STANDARD,
   type: #IDENTIFICATION_REFERENCE,
   label: 'Student Data Entry',
-  position: 10 }]
+  position: 10 },
+  { 
+    id: 'AcademicResult',
+  purpose: #STANDARD,
+  type: #LINEITEM_REFERENCE,
+  label: 'Acadamic Result',
+  position: 20,
+  targetElement: '_academics'
+   }
+  ]
+  
+  
   @UI:{ lineItem: [{ position: 10, label: 'Student ID' }],
   identification: [{ position: 10 , label: 'Student ID'}],
   selectionField: [{ position: 10 }] }
@@ -39,7 +50,15 @@ annotate entity  ZC_STUD_0173
   @UI:{ lineItem: [{ position: 80, label: 'Gender' }],
   identification: [{ position: 80 , label: 'Gender'}],
   selectionField: [{ position: 80 }] }
+  @Consumption.valueHelpDefinition: [{ entity : { name: 'ZI_GENDER_173', element: 'genderCode' },
+  distinctValues: true,
+  additionalBinding: [{localElement: 'genderText', 
+                       element: 'genderText',
+                       usage: #FILTER_AND_RESULT}]
+   }]
   Gender;
+  @UI:{ identification: [{ position: 85 , label: 'Gender Description' }] }
+  genderText;
   @UI:{ lineItem: [{ position: 90, label: 'DOB' }],
   identification: [{ position: 90 , label: 'DOB'}],
   selectionField: [{ position: 90 }] }

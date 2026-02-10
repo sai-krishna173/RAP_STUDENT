@@ -13,6 +13,9 @@ etag master Locallastchangedat
   create ( authorization : global );
   update;
   delete;
+
+  association _academics{ create; with draft;}
+
   field ( numbering : managed, readonly ) Id;
   field ( readonly ) Lastchangedat, Locallastchangedat;
 
@@ -24,6 +27,8 @@ etag master Locallastchangedat
   draft action Edit;
   draft action Resume;
   draft determine action Prepare;
+
+//  validation checkCourse on save {create; update; field Course;}
 
   mapping for ztb_stud_0173 corresponding
     {
@@ -39,4 +44,30 @@ etag master Locallastchangedat
       lastChangedAt      = lastchangedat;
       Locallastchangedat = locallastchangedat;
     }
+}
+
+define behavior for zi_academic_173 alias Acadamic
+persistent table Ztb_academic_173
+draft table Zdtb_acadmic_173
+lock dependent by _student
+//total etag Lastchangedat
+authorization dependent by _student
+{
+    delete;
+    update;
+
+    association _student{ with draft; }
+
+    field ( readonly ) Id, Course_desc, Semester_desc, Result_desc;
+
+    field ( readonly : update ) Semester,Course;
+
+    mapping for Ztb_academic_173 corresponding
+    {
+     Id = id;
+     Course = course;
+     Semester = semester;
+     Semresult = semresult;
+    }
+
 }
